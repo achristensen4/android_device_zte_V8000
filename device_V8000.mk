@@ -20,8 +20,7 @@ PRODUCT_COPY_FILES += \
 # Recovery
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/rmt_storage_recovery:recovery/root/sbin/rmt_storage_recovery \
-    $(LOCAL_PATH)/recovery/ueventd.rc:root/ueventd.rc \
-    $(LOCAL_PATH)/recovery/init.qcom.usb.sh:root/init.qcom.usb.sh
+    $(LOCAL_PATH)/recovery/ueventd.rc:root/ueventd.rc
 
 $(call inherit-product, build/target/product/full.mk)
 

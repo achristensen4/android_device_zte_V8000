@@ -34,6 +34,9 @@ service ueventd /sbin/ueventd
 service rmt_storage /sbin/rmt_storage_recovery
     user root
 
+on property:ro.emmc=1
+    start rmt_storage
+
 service recovery /sbin/recovery
     oneshot
 
@@ -43,13 +46,13 @@ service adbd /sbin/adbd recovery
 # Always start adbd on userdebug and eng builds
 on property:ro.debuggable=1
     write /sys/class/android_usb/android0/enable 0
-    write /sys/class/android_usb/android0/idVendor 19D2
-    write /sys/class/android_usb/android0/idProduct FFE1
-    write /sys/class/android_usb/android0/functions adb
+    write /sys/class/android_usb/android0/iSerial CWM-ZTE
+    write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
+    write /sys/class/android_usb/android0/iProduct ${ro.product.model}
+    write /sys/class/android_usb/android0/idVendor 19d2
+    write /sys/class/android_usb/android0/idProduct 1351
+    write /sys/class/android_usb/android0/functions mass_storage,adb
     write /sys/class/android_usb/android0/enable 1
-    write /sys/class/android_usb/android0/iManufacturer $ro.product.manufacturer
-    write /sys/class/android_usb/android0/iProduct $ro.product.model
-    write /sys/class/android_usb/android0/iSerial $ro.serialno
     start adbd
     setprop service.adb.root 1
 

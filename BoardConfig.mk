@@ -17,7 +17,7 @@ BOARD_KERNEL_CMDLINE := console=ttyHSL1,115200n1 androidboot.hardware=zte
 BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_PAGESIZE := 4096
 
-# fix this up by examining /proc/mtd on a running device
+# Fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 0x105c0000
@@ -30,11 +30,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_PREBUILT_KERNEL := device/zte/V8000/kernel
 BOARD_CUSTOM_GRAPHICS := ../../../device/zte/V8000/recovery/graphics.c
 TARGET_RECOVERY_INITRC := device/zte/V8000/recovery/recovery.rc
-BOARD_HAS_NO_SELECT_BUTTON := true
-
-# USB Mass Storage
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Use this flag if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
