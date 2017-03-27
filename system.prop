@@ -15,20 +15,20 @@ persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
 debug.sf.hw=1
-#dalvik.vm.heapsize=24m
+dalvik.vm.heapsize=24m
 dev.pm.dyn_samplingrate=1
 
 #
 # system props for the cne module
 #
 persist.cne.UseCne=vendor
-persist.cne.UseSwim=false
+persist.cne.UseSwim=true
 persist.cne.bat.range.low.med=30
 persist.cne.bat.range.med.high=60
 persist.cne.loc.policy.op=/system/etc/OperatorPolicy.xml
 persist.cne.loc.policy.user=/system/etc/UserPolicy.xml
 persist.cne.bwbased.rat.sel=false
-persist.cne.snsr.based.rat.mgt=false
+persist.cne.snsr.based.rat.mgt=true
 persist.cne.bat.based.rat.mgt=false
 persist.cne.rat.acq.time.out=30000
 persist.cne.rat.acq.retry.tout=0
@@ -58,13 +58,13 @@ ro.config.ehrpd=true
 # system props for the MM modules
 #
 media.stagefright.enable-player=true
-media.stagefright.enable-meta=false
+media.stagefright.enable-meta=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-http=true
 media.stagefright.enable-fma2dp=true
 media.stagefright.enable-aac=true
 media.stagefright.enable-qcp=true
-lpa.use-stagefright=false
+lpa.use-stagefright=true
 
 #
 # system prop for opengles version
@@ -98,7 +98,7 @@ ro.qualcomm.bluetooth.ftp=true
 #
 # system property for Bluetooth discoverability time out in seconds
 # 0: Always discoverable
-#debug.bt.discoverable_time=0
+debug.bt.discoverable_time=0
 
 #
 # system prop for requesting Master role in incoming Bluetooth connection.
@@ -108,8 +108,6 @@ ro.bluetooth.request.master=true
 #
 # system property to enforce Phone Mode view
 #
-ro.screen.layout=normal
-
 ro.sf.lcd_density=240
 
 #
@@ -123,7 +121,7 @@ debug.camcorder.disablemeta=0
 persist.fuse_sdcard=false
 # Turn off tiled rendering
 #
-debug.enabletr=false
+debug.enabletr=true
 
 #
 # System prop for using landscape preview layout in camera
@@ -138,8 +136,4 @@ ro.max.fling_velocity=4000
 #
 # System prop for disabling the rendering dirty regions
 #
-hwui.render_dirty_region=false
-#
-# System prop for the boot and shutdown bell
-#
-persist.sys.power.sound=1
+hwui.render_dirty_region=true
